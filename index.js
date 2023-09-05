@@ -1,12 +1,10 @@
 const http = require('http')
+const data=require('./dummy')
 const app = http.createServer((req, res) => {
     const url = req.url
     if (url == '/nodejs') {
-        res.write("<html>")
-        res.write("<head><title>Hi !! i am Mohd Arif how are u javascript</title></head>")
-        res.write("<body><h1>Node JS!!</h1></body>")
-        res.write("</html>")
-        res.end()
+        body_data=JSON.stringify(data)
+        res.end(body_data)
     }
     else if('/')
     {
@@ -26,8 +24,8 @@ const app = http.createServer((req, res) => {
         res.end()
     }
 
-})
+}) 
 
 app.listen(9000, () => {
-    console.log('you are runnig on 8000')
+    console.log('you are runnig on 9000')
 })
